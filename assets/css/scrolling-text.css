@@ -1,0 +1,53 @@
+/**
+ * Scrolling Text Styles
+ */
+
+.scrolling-text-container {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    padding: 0 15px;
+    flex: 1;
+    margin: 0 15px;
+    max-width: 600px;
+}
+
+.scrolling-text-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scrollText 20s linear infinite;
+}
+
+.scrolling-text-item {
+    padding: 0 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.scrolling-text-item:not(:last-child)::after {
+    content: '\2022'; /* bullet character */
+    position: absolute;
+    right: 0;
+    opacity: 0.8;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .scrolling-text-container {
+        height: 30px;
+        margin: 5px 0;
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}

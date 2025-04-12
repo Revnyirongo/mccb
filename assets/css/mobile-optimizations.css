@@ -1,0 +1,253 @@
+/**
+ * Mobile First Optimizations
+ * These styles ensure the site looks and works great on mobile devices
+ */
+
+/* Base Mobile Styles */
+body {
+    overflow-x: hidden;
+}
+
+/* Mobile Header Optimization */
+@media (max-width: 768px) {
+    .site-header {
+        position: relative;
+    }
+    
+    .top-bar {
+        padding: 0.5rem 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-info {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .social-icons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+    }
+    
+    .site-branding {
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+    
+    .custom-logo-link {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .custom-logo {
+        max-height: 60px;
+        width: auto;
+    }
+    
+    .site-title {
+        font-size: 1.4rem;
+    }
+    
+    .site-description {
+        font-size: 0.9rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 999;
+    }
+    
+    .main-navigation {
+        position: static;
+    }
+    
+    .nav-container {
+        position: relative;
+    }
+    
+    .main-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        z-index: 998;
+        display: none;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    
+    .main-menu.toggled {
+        display: block;
+    }
+    
+    .main-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .main-menu a {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .sub-menu {
+        position: static !important;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.2) !important;
+        display: none;
+    }
+    
+    .sub-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .sub-menu-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .sub-menu-toggle:after {
+        content: '+';
+    }
+    
+    .sub-menu-toggle[aria-expanded="true"]:after {
+        content: '-';
+    }
+}
+
+/* Mobile Content Optimization */
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Single Post Mobile Styles */
+    .single-featured-image {
+        height: 40vh;
+        min-height: 250px;
+    }
+    
+    .single-post-header {
+        margin-top: -80px;
+        padding: 25px;
+        border-radius: 8px;
+    }
+    
+    .single-post-header .entry-title {
+        font-size: 1.8rem;
+    }
+    
+    .single-post-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .entry-content {
+        font-size: 1rem;
+    }
+    
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .author-avatar {
+        margin: 0 0 1rem 0;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Comments Mobile */
+    .comments-area {
+        padding: 1.5rem;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .single-post-header .entry-title {
+        font-size: 1.5rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .post-categories {
+        flex-wrap: wrap;
+    }
+}
+
+/* Touch Optimizations */
+@media (hover: none) {
+    /* Enhance touch targets for better mobile usability */
+    .main-menu a, 
+    .btn, 
+    .read-more,
+    .social-icons a,
+    .post-categories a {
+        padding: 10px 15px;
+        min-height: 44px; /* Apple's recommended minimum touch target size */
+    }
+    
+    /* Remove hover effects that might interfere with touch interactions */
+    .hero-btn::before {
+        display: none;
+    }
+}
+
+/* Mobile Landscape Mode */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-slider {
+        height: 100vh;
+    }
+    
+    .site-header {
+        position: relative;
+    }
+}
+
+/* High DPI Screens */
+@media (min-resolution: 192dpi) {
+    .hero-slider, 
+    .single-featured-image {
+        background-size: cover;
+    }
+}
