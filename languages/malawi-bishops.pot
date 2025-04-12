@@ -1,0 +1,412 @@
+# Copyright (C) 2025 Revelation Nyirongo
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Malawi Catholic Bishops 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/malawi-bishops\n"
+"Last-Translator: REVELATION NYIRONGO <info@revelation.africa>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-07T12:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: malawi-bishops\n"
+
+#. Theme Name of the theme
+msgid "Malawi Bishops"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://revelation.africa/malawi-bishops-theme/"
+msgstr ""
+
+#. Description of the theme
+msgid "A professional WordPress theme for the Conference of Catholic Bishops in Malawi."
+msgstr ""
+
+#. Author of the theme
+msgid "Revelation Nyirongo"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://revelation.africa/"
+msgstr ""
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: 404.php:30
+msgid "Recent Posts"
+msgstr ""
+
+#: 404.php:56
+msgid "Upcoming Events"
+msgstr ""
+
+#: archive.php:39
+msgid "Upcoming Events"
+msgstr ""
+
+#: archive.php:40
+msgid "Past Events"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:55
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:56
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:130
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:132
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:143
+#, php-format
+msgid "Footer %d"
+msgstr ""
+
+#: functions.php:145
+msgid "Add footer widgets here."
+msgstr ""
+
+#: functions.php:202
+msgid "Add New"
+msgstr ""
+
+#: functions.php:203
+msgid "Add New Bishop"
+msgstr ""
+
+#: functions.php:204
+msgid "New Bishop"
+msgstr ""
+
+#: functions.php:205
+msgid "Edit Bishop"
+msgstr ""
+
+#: functions.php:206
+msgid "View Bishop"
+msgstr ""
+
+#: functions.php:207
+msgid "All Bishops"
+msgstr ""
+
+#: functions.php:208
+msgid "Search Bishops"
+msgstr ""
+
+#: functions.php:209
+msgid "Parent Bishops:"
+msgstr ""
+
+#: functions.php:210
+msgid "No bishops found."
+msgstr ""
+
+#: functions.php:211
+msgid "No bishops found in Trash."
+msgstr ""
+
+#: functions.php:242
+msgid "Add New Event"
+msgstr ""
+
+#: functions.php:243
+msgid "New Event"
+msgstr ""
+
+#: functions.php:244
+msgid "Edit Event"
+msgstr ""
+
+#: functions.php:245
+msgid "View Event"
+msgstr ""
+
+#: functions.php:246
+msgid "All Events"
+msgstr ""
+
+#: functions.php:247
+msgid "Search Events"
+msgstr ""
+
+#: functions.php:248
+msgid "Parent Events:"
+msgstr ""
+
+#: functions.php:249
+msgid "No events found."
+msgstr ""
+
+#: functions.php:250
+msgid "No events found in Trash."
+msgstr ""
+
+#: functions.php:281
+msgid "Search Dioceses"
+msgstr ""
+
+#: functions.php:282
+msgid "All Dioceses"
+msgstr ""
+
+#: functions.php:283
+msgid "Parent Diocese"
+msgstr ""
+
+#: functions.php:284
+msgid "Parent Diocese:"
+msgstr ""
+
+#: functions.php:285
+msgid "Edit Diocese"
+msgstr ""
+
+#: functions.php:286
+msgid "Update Diocese"
+msgstr ""
+
+#: functions.php:287
+msgid "Add New Diocese"
+msgstr ""
+
+#: functions.php:288
+msgid "New Diocese Name"
+msgstr ""
+
+#: functions.php:289
+msgid "Dioceses"
+msgstr ""
+
+#: functions.php:309
+msgid "Search Event Types"
+msgstr ""
+
+#: functions.php:310
+msgid "All Event Types"
+msgstr ""
+
+#: functions.php:311
+msgid "Parent Event Type"
+msgstr ""
+
+#: functions.php:312
+msgid "Parent Event Type:"
+msgstr ""
+
+#: functions.php:313
+msgid "Edit Event Type"
+msgstr ""
+
+#: functions.php:314
+msgid "Update Event Type"
+msgstr ""
+
+#: functions.php:315
+msgid "Add New Event Type"
+msgstr ""
+
+#: functions.php:316
+msgid "New Event Type Name"
+msgstr ""
+
+#: functions.php:317
+msgid "Event Types"
+msgstr ""
+
+#: functions.php:339
+msgid "Bishop Details"
+msgstr ""
+
+#: functions.php:351
+msgid "Event Details"
+msgstr ""
+
+#: functions.php:373
+msgid "Title"
+msgstr ""
+
+#: functions.php:375
+msgid "e.g., Most Rev., Archbishop, Bishop"
+msgstr ""
+
+#: functions.php:378
+msgid "Role in Conference"
+msgstr ""
+
+#: functions.php:380
+msgid "e.g., President, Vice President, Secretary"
+msgstr ""
+
+#: functions.php:393
+msgid "Start Date"
+msgstr ""
+
+#: functions.php:397
+msgid "End Date (optional)"
+msgstr ""
+
+#: functions.php:401
+msgid "Location"
+msgstr ""
+
+#: inc/template-functions.php:51
+msgid "Bishop Portrait"
+msgstr ""
+
+#: inc/template-functions.php:52
+msgid "Feature Image"
+msgstr ""
+
+#: inc/template-functions.php:53
+msgid "Hero Image"
+msgstr ""
+
+#: inc/template-tags.php:62
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:69
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:79
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:96 template-parts/content-page.php:39
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/template-tags.php:207
+msgid "No bishops found for this diocese."
+msgstr ""
+
+#: inc/template-tags.php:242
+msgid "No upcoming events found."
+msgstr ""
+
+#: inc/widgets.php:14
+msgid "Upcoming Events"
+msgstr ""
+
+#: inc/widgets.php:15
+msgid "Display upcoming events"
+msgstr ""
+
+#: inc/widgets.php:48 inc/widgets.php:92
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets.php:52
+msgid "Number of events to show:"
+msgstr ""
+
+#: inc/widgets.php:72
+msgid "Dioceses List"
+msgstr ""
+
+#: inc/widgets.php:73
+msgid "Display a list of all dioceses"
+msgstr ""
+
+#: inc/widgets.php:86
+msgid "Dioceses"
+msgstr ""
+
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:28
+msgid "Previous:"
+msgstr ""
+
+#: single.php:29
+msgid "Next:"
+msgstr ""
+
+#: template-parts/content-bishop.php:54 template-parts/content-event.php:71 template-parts/content-page.php:25 template-parts/content-post.php:48
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-bishop.php:66
+msgid "Read Biography"
+msgstr ""
+
+#: template-parts/content-event.php:38
+msgid "Date:"
+msgstr ""
+
+#: template-parts/content-event.php:49
+msgid "Event Type:"
+msgstr ""
+
+#: template-parts/content-event.php:74
+msgid "View Event Details"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:24
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-post.php:32
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-post.php:52
+msgid "Read More"
+msgstr ""
