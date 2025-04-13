@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The header for our theme with fixes
  *
  * This is the template that displays all of the <head> section and header elements
  *
@@ -37,9 +37,19 @@
 					<a href="mailto:info@mccbmw.org"><i class="header-icon email-icon"></i>info@mccbmw.org</a>
 				</div>
 				
-				<?php if (get_theme_mod('malawi_bishops_enable_scrolling_text', false)) : ?>
-					<?php malawi_bishops_display_scrolling_text(); ?>
-				<?php endif; ?>
+				<?php 
+				// Check for the function first to avoid errors
+				if (function_exists('malawi_bishops_display_scrolling_text') && get_theme_mod('malawi_bishops_enable_scrolling_text', false)) {
+					malawi_bishops_display_scrolling_text();
+				} else {
+					// Fallback scrolling text if function doesn't exist
+					echo '<div class="scrolling-text-container">';
+					echo '<div class="scrolling-text-wrapper">';
+					echo '<div class="scrolling-text-item">' . esc_html__('Welcome to the Conference of Catholic Bishops in Malawi', 'malawi-bishops') . '</div>';
+					echo '</div>';
+					echo '</div>';
+				}
+				?>
 				
 				<div class="social-icons">
 					<?php 
@@ -92,6 +102,7 @@
 							'menu_id'        => 'primary-menu',
 							'container'      => false,
 							'menu_class'     => 'main-menu',
+							'fallback_cb'    => 'malawi_bishops_main_menu_fallback',
 						)
 					);
 					?>
@@ -104,3 +115,14 @@
 			</div>
 		</div><!-- .header-wrapper -->
 	</header><!-- #masthead -->
+	
+<?php
+/**
+ * Fallback for main menu if none is set
+ */
+function malawi_bishops_main_menu_fallback() {
+	echo '<ul class="main-menu">';
+	echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'malawi-bishops') . '</a></li>';
+	echo '</ul>';
+}
+?>
