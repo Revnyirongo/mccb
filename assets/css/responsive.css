@@ -1,0 +1,156 @@
+/* Responsive CSS for Malawi Bishops Theme */
+
+/* Breakpoints
+ * Large: 1200px and above
+ * Medium: 992px - 1199px
+ * Tablet: 768px - 991px
+ * Mobile: 576px - 767px
+ * Small Mobile: 575px and below
+ */
+
+/* Medium Screens */
+@media (max-width: 1199px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+    
+    .bishops-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet Screens */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        max-width: 720px;
+    }
+    
+    .bishops-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-md-8, .col-md-4 {
+        width: 100%;
+    }
+    
+    .single-post-header {
+        padding: 30px;
+    }
+    
+    .single-post-header .entry-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 767px) {
+    .site-header {
+        position: relative;
+    }
+    
+    .site-branding {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .custom-logo-link {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .site-title {
+        font-size: 1.5rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-menu {
+        display: none;
+        flex-direction: column;
+    }
+    
+    .main-menu.toggled {
+        display: flex;
+    }
+    
+    .main-menu li {
+        width: 100%;
+    }
+    
+    .main-menu .sub-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 1rem;
+    }
+    
+    .bishops-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .single-post-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 575px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-text {
+        font-size: 0.9rem;
+    }
+    
+    .bishops-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .author-avatar {
+        margin: 0 auto 1rem;
+    }
+}

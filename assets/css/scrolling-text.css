@@ -13,6 +13,7 @@
     flex: 1;
     margin: 0 15px;
     max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .scrolling-text-wrapper {
@@ -28,6 +29,7 @@
     padding: 0 20px;
     display: inline-block;
     position: relative;
+    color: white;
 }
 
 .scrolling-text-item:not(:last-child)::after {
@@ -35,11 +37,17 @@
     position: absolute;
     right: 0;
     opacity: 0.8;
+    color: white;
 }
 
 @keyframes scrollText {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
+}
+
+/* Pause on hover */
+.scrolling-text-container:hover .scrolling-text-wrapper {
+    animation-play-state: paused;
 }
 
 /* Responsive Styles */
@@ -49,5 +57,20 @@
         margin: 5px 0;
         width: 100%;
         font-size: 0.9rem;
+    }
+    
+    .scrolling-text-item {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrolling-text-container {
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    
+    .scrolling-text-item {
+        padding: 0 10px;
     }
 }
