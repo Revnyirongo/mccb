@@ -317,7 +317,210 @@ if (!function_exists('malawi_bishops_add_critical_styles')) {
 }
 add_action('wp_enqueue_scripts', 'malawi_bishops_add_critical_styles', 999);
 
+/**
+ * Enqueue additional CSS files for new components
+ */
+if (!function_exists('malawi_bishops_enqueue_additional_styles')) {
+    function malawi_bishops_enqueue_additional_styles() {
+        // Enqueue component-specific CSS files
+        $css_modules = [
+            'bishops-grid',
+            'about-section',
+            'facebook-feed',
+            'events-cta',
+            'footer'
+        ];
+        
+        foreach ($css_modules as $module) {
+            $file_path = "/assets/css/{$module}.css";
+            if (file_exists(get_template_directory() . $file_path)) {
+                wp_enqueue_style(
+                    "malawi-bishops-{$module}-component",
+                    get_template_directory_uri() . $file_path,
+                    array(),
+                    MALAWI_BISHOPS_VERSION
+                );
+            }
+        }
+        
+        // Enqueue custom JS
+        $custom_js_path = '/assets/js/custom.js';
+        if (file_exists(get_template_directory() . $custom_js_path)) {
+            wp_enqueue_script(
+                'malawi-bishops-custom',
+                get_template_directory_uri() . $custom_js_path,
+                array('jquery'),
+                MALAWI_BISHOPS_VERSION,
+                true
+            );
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'malawi_bishops_enqueue_additional_styles');
+
+/**
+ * Add customizer settings for the footer
+ */
+if (!function_exists('malawi_bishops_footer_customizer')) {
+    function malawi_bishops_footer_customizer($wp_customize) {
+        // Footer Section
+        $wp_customize->add_section('malawi_bishops_footer_section', array(
+            'title'    => __('Footer Options', 'malawi-bishops'),
+            'priority' => 120,
+        ));
+        
+        // Footer About Text
+        $wp_customize->add_setting('malawi_bishops_footer_about', array(
+            'default'           => __('The Episcopal Conference of Malawi is an assembly of Catholic Bishops bringing unity, development, justice, peace, and solidarity to Malawi.', 'malawi-bishops'),
+            'sanitize_callback' => 'wp_kses_post',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_footer_about', array(
+            'label'       => __('Footer About Text', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'textarea',
+        ));
+        
+        // Contact Information
+        $wp_customize->add_setting('malawi_bishops_address', array(
+            'default'           => __('ECM Secretariat, Area 11, Plot #: M1170, Paul VI Road, P.O. Box 30384, Lilongwe, Malawi', 'malawi-bishops'),
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_address', array(
+            'label'       => __('Address', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'text',
+        ));
+        
+        $wp_customize->add_setting('malawi_bishops_phone', array(
+            'default'           => __('+265 1 772 066', 'malawi-bishops'),
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_phone', array(
+            'label'       => __('Phone Number', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'text',
+        ));
+        
+        $wp_customize->add_setting('malawi_bishops_email', array(
+            'default'           => __('info@mccbmw.org', 'malawi-bishops'),
+            'sanitize_callback' => 'sanitize_email',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_email', array(
+            'label'       => __('Email Address', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'email',
+        ));
+        
+        // Social Media
+        $wp_customize->add_setting('malawi_bishops_facebook', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_facebook', array(
+            'label'       => __('Facebook URL', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'url',
+        ));
+        
+        $wp_customize->add_setting('malawi_bishops_twitter', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_twitter', array(
+            'label'       => __('Twitter URL', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'url',
+        ));
+        
+        $wp_customize->add_setting('malawi_bishops_youtube', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_youtube', array(
+            'label'       => __('YouTube URL', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'url',
+        ));
+        
+        $wp_customize->add_setting('malawi_bishops_instagram', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_instagram', array(
+            'label'       => __('Instagram URL', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'url',
+        ));
+        
+        // Copyright text
+        $wp_customize->add_setting('malawi_bishops_copyright_text', array(
+            'default'           => '&copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. ' . __('All Rights Reserved.', 'malawi-bishops'),
+            'sanitize_callback' => 'wp_kses_post',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_copyright_text', array(
+            'label'       => __('Copyright Text', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_footer_section',
+            'type'        => 'textarea',
+        ));
+    }
+}
+add_action('customize_register', 'malawi_bishops_footer_customizer');
+
+/**
+ * Add customizer settings for Facebook Feed
+ */
+if (!function_exists('malawi_bishops_facebook_feed_customizer')) {
+    function malawi_bishops_facebook_feed_customizer($wp_customize) {
+        // Facebook Feed Section
+        $wp_customize->add_section('malawi_bishops_facebook_feed', array(
+            'title'    => __('Facebook Feed', 'malawi-bishops'),
+            'priority' => 115,
+        ));
+        
+        // Facebook Page URL
+        $wp_customize->add_setting('malawi_bishops_facebook_page', array(
+            'default'           => 'https://www.facebook.com/MalawiCatholicBishops',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_facebook_page', array(
+            'label'       => __('Facebook Page URL', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_facebook_feed',
+            'type'        => 'url',
+        ));
+        
+        // Facebook Shortcode
+        $wp_customize->add_setting('malawi_bishops_facebook_shortcode', array(
+            'default'           => '[facebook_page_plugin href="https://www.facebook.com/MalawiCatholicBishops" width="500" height="500" tabs="timeline"]',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        
+        $wp_customize->add_control('malawi_bishops_facebook_shortcode', array(
+            'label'       => __('Facebook Shortcode', 'malawi-bishops'),
+            'description' => __('Enter the shortcode for your Facebook page plugin. You can get this from the Facebook Developer tools or a plugin like "Custom Facebook Feed".', 'malawi-bishops'),
+            'section'     => 'malawi_bishops_facebook_feed',
+            'type'        => 'text',
+        ));
+    }
+}
+add_action('customize_register', 'malawi_bishops_facebook_feed_customizer');
+
 // Final action to log theme activation
 add_action('after_switch_theme', function() {
     malawi_bishops_debug_log('Theme activated: Malawi Bishops Theme version ' . MALAWI_BISHOPS_VERSION, 'activation');
 });
+
+/**
+ * NOTE: The malawi_bishops_hero_slider() function has been moved to 
+ * inc/template-functions-extended.php to avoid duplication. This function should 
+ * NOT be defined here to prevent "Cannot redeclare" errors.
+ */

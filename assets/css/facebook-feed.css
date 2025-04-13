@@ -1,0 +1,203 @@
+/**
+ * Facebook Feed Section Styles
+ */
+
+.facebook-feed-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.facebook-feed-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Left side - Section header */
+.facebook-feed-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.facebook-feed-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.social-button:hover {
+    background-color: var(--accent-color);
+}
+
+.social-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Newsletter form */
+.newsletter-signup {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.newsletter-signup h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.subscribe-button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.subscribe-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Right side - Facebook feed */
+.facebook-feed-right {
+    flex: 2;
+    min-width: 300px;
+}
+
+.facebook-feed-container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.facebook-feed-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.facebook-feed-header svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.facebook-feed-header h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.facebook-feed-content {
+    padding: 20px;
+    min-height: 500px; /* Match height from the shortcode */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .facebook-feed-sticky {
+        position: static;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .facebook-feed-section {
+        padding: 60px 0;
+    }
+    
+    .facebook-feed-wrapper {
+        flex-direction: column;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .title-underline {
+        margin: 0 auto 25px;
+    }
+    
+    .section-title, 
+    .section-description {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .facebook-feed-content {
+        padding: 15px;
+    }
+    
+    .newsletter-signup {
+        padding: 20px;
+    }
+}

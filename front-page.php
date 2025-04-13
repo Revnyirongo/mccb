@@ -15,6 +15,12 @@ get_header();
 		// Hero Slider - displays posts from Front Page category
 		malawi_bishops_hero_slider();
 		
+		// About MCCB Section
+		get_template_part('template-parts/about-section');
+		
+		// Bishops Grid
+		get_template_part('template-parts/bishops-grid');
+		
 		// Features Section (Our Mission)
 		$show_features = get_theme_mod('malawi_bishops_show_features', true);
 		if ($show_features) :
@@ -92,6 +98,9 @@ get_header();
 		<?php endif; ?>
 		
 		<?php
+		// Events and CTA Section
+		get_template_part('template-parts/events-cta');
+		
 		// News Section
 		$show_news = get_theme_mod('malawi_bishops_show_news', true);
 		if ($show_news) :
@@ -148,98 +157,9 @@ get_header();
 		<?php endif; ?>
 		
 		<?php
-		// Bishops Section
-		$show_bishops = get_theme_mod('malawi_bishops_show_bishops', true);
-		if ($show_bishops) :
-			$bishops_title = get_theme_mod('malawi_bishops_bishops_title', 'Our Bishops');
-			$bishops_count = get_theme_mod('malawi_bishops_bishops_count', 8);
-		?>
+		// Facebook Feed Section
+		get_template_part('template-parts/facebook-feed');
 		
-		<section class="section bishops">
-			<div class="container">
-				<?php if ($bishops_title) : ?>
-					<h2 class="section-title"><?php echo esc_html($bishops_title); ?></h2>
-				<?php endif; ?>
-				
-				<div class="bishops-grid">
-					<?php
-					$args = array(
-						'post_type'      => 'bishop',
-						'posts_per_page' => absint($bishops_count),
-					);
-					
-					$bishops_query = new WP_Query($args);
-					
-					if ($bishops_query->have_posts()) :
-						while ($bishops_query->have_posts()) :
-							$bishops_query->the_post();
-							get_template_part('template-parts/content', 'bishop');
-						endwhile;
-						wp_reset_postdata();
-					else :
-						?>
-						<p><?php esc_html_e('No bishops found.', 'malawi-bishops'); ?></p>
-						<?php
-					endif;
-					?>
-				</div>
-			</div>
-		</section>
-		<?php endif; ?>
-		
-		<?php
-		// Events Section
-		$show_events = get_theme_mod('malawi_bishops_show_events', true);
-		if ($show_events) :
-			$events_title = get_theme_mod('malawi_bishops_events_title', 'Upcoming Events');
-			$events_count = get_theme_mod('malawi_bishops_events_count', 3);
-		?>
-		
-		<section class="section events">
-			<div class="container">
-				<?php if ($events_title) : ?>
-					<h2 class="section-title"><?php echo esc_html($events_title); ?></h2>
-				<?php endif; ?>
-				
-				<div class="events-list">
-					<?php
-					$today = date('Y-m-d');
-					$args = array(
-						'post_type'      => 'event',
-						'posts_per_page' => absint($events_count),
-						'meta_key'       => '_event_start_date',
-						'orderby'        => 'meta_value',
-						'order'          => 'ASC',
-						'meta_query'     => array(
-							array(
-								'key'     => '_event_start_date',
-								'value'   => $today,
-								'compare' => '>=',
-								'type'    => 'DATE',
-							),
-						),
-					);
-					
-					$events_query = new WP_Query($args);
-					
-					if ($events_query->have_posts()) :
-						while ($events_query->have_posts()) :
-							$events_query->the_post();
-							get_template_part('template-parts/content', 'event');
-						endwhile;
-						wp_reset_postdata();
-					else :
-						?>
-						<p><?php esc_html_e('No upcoming events found.', 'malawi-bishops'); ?></p>
-						<?php
-					endif;
-					?>
-				</div>
-			</div>
-		</section>
-		<?php endif; ?>
-		
-		<?php
 		// Content from the front page if it exists
 		// We'll only show the content that's directly added to the page, not the default posts
 		if (is_front_page() && !is_home()) { // Check if we're on a static front page

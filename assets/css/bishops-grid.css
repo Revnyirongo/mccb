@@ -2,6 +2,12 @@
  * Bishops Grid Display Styles
  */
 
+/* Main Bishops Grid Section */
+.bishops-grid-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
 /* Main Bishops Grid */
 .bishops-grid {
     display: grid;
@@ -12,7 +18,7 @@
 
 /* Bishop Card */
 .bishop-card {
-    background-color: var(--light-color);
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -68,7 +74,7 @@
 
 /* Bishop Content */
 .bishop-content {
-    padding: 1.25rem;
+    padding: 1rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -76,50 +82,29 @@
     background-color: white;
 }
 
-.bishop-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+.bishop-name {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
     line-height: 1.3;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
-.bishop-title {
-    font-weight: 500;
+.bishop-role {
     color: #555;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
 }
 
-.bishop-info {
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-}
-
-.bishop-card .read-more {
-    margin-top: auto;
-    align-self: flex-start;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.bishop-card .read-more:after {
-    content: '→';
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.bishop-card .read-more:hover {
-    color: var(--accent-color);
-}
-
-.bishop-card .read-more:hover:after {
-    transform: translateX(3px);
+.bishop-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    text-indent: -9999px;
 }
 
 /* Single Bishop Page */
@@ -189,14 +174,14 @@
 
 @media (max-width: 480px) {
     .bishops-grid {
-        grid-template-columns: 1fr; /* 1 per row on very small screens */
+        grid-template-columns: repeat(2, 1fr); /* Still 2 per row on very small screens */
     }
     
     .bishop-content {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
-    .bishop-content h3 {
-        font-size: 1rem;
+    .bishop-name {
+        font-size: 0.9rem;
     }
 }
