@@ -1,0 +1,123 @@
+/**
+ * Mobile About Section
+ * Styles for the About MCCB section with responsive design
+ */
+
+/* About section container */
+.about-mccb-section {
+  padding: 40px 15px;
+  background-color: #4b0082; /* Purple */
+  color: white;
+  text-align: center;
+}
+
+/* Section title */
+.about-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: white;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #d4af37; /* Gold */
+}
+
+/* Content area */
+.about-content {
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Diocese tags */
+.diocese-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.diocese-tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Read more button */
+.about-more {
+  margin-top: 25px;
+}
+
+.about-more .btn {
+  background-color: #d4af37; /* Gold */
+  color: #4b0082; /* Purple */
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.about-more .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) {
+  .about-mccb-section {
+    padding: 60px 20px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-content {
+    max-width: 80%;
+    font-size: 1.1rem;
+  }
+  
+  .diocese-tags {
+    gap: 10px;
+  }
+  
+  .diocese-tag {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-content {
+    max-width: 70%;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .about-content {
+    max-width: 60%;
+  }
+}

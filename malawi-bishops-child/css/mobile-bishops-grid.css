@@ -1,0 +1,148 @@
+/**
+ * Mobile Bishops Grid
+ * Creates a responsive grid for displaying bishops
+ */
+
+/* Bishop grid section */
+.bishops-grid-section {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #4b0082; /* Purple */
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #d4af37; /* Gold */
+}
+
+/* Mobile-first grid - single column */
+.bishops-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+/* Bishop card */
+.bishop-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bishop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Bishop image */
+.bishop-img {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Square aspect ratio */
+  overflow: hidden;
+}
+
+.bishop-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Focus on face */
+  border-radius: 12px 12px 0 0;
+}
+
+/* Diocese tag */
+.bishop-diocese {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d4af37; /* Gold */
+  color: #4b0082; /* Purple */
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Bishop content */
+.bishop-content {
+  padding: 15px;
+}
+
+.bishop-name {
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  color: #4b0082; /* Purple */
+  font-weight: bold;
+}
+
+.bishop-role {
+  color: #555;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Tablet view - 2 columns */
+@media (min-width: 576px) {
+  .bishops-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 540px;
+  }
+}
+
+/* Larger tablet view - 3 columns */
+@media (min-width: 768px) {
+  .bishops-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 720px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop view - 4 columns */
+@media (min-width: 992px) {
+  .bishops-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 960px;
+  }
+}
+
+/* Large desktop - 5 columns */
+@media (min-width: 1200px) {
+  .bishops-grid {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1140px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}

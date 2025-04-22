@@ -1,0 +1,88 @@
+/**
+ * Core Mobile Fixes
+ * Handles basic responsive layout issues and container spacing
+ */
+
+/* Box sizing reset */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Fix container and prevent overflow */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+/* Fix row overflow */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Fix columns */
+[class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  position: relative;
+}
+
+/* Remove problematic elements */
+.news-ticker-container,
+.ticker-wrapper,
+.ticker-item,
+.scrolling-text-container,
+.scrolling-text-wrapper,
+.scrolling-text-item,
+.corner-peel {
+  display: none !important;
+}
+
+/* Mobile First Media Queries */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .col-md-4 {
+    width: 33.333333%;
+  }
+  
+  .col-md-8 {
+    width: 66.666667%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

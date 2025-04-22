@@ -1,0 +1,17 @@
+/*
+Theme Name: Malawi Bishops Child
+Theme URI: https://revelation.africa/malawi-bishops-theme/
+Description: A child theme for Malawi Bishops Theme with mobile-first enhancements
+Author: Revelation Nyirongo
+Author URI: https://revelation.africa/
+Template: malawi-bishops
+Version: 1.0.0
+Text Domain: malawi-bishops-child
+*/
+
+/* The Template value above must match your parent theme's folder name exactly */
+
+/* Import parent theme styles */
+@import url("../malawi-bishops/style.css");
+
+/* Your custom styles will be below */
