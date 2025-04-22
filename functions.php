@@ -21,6 +21,16 @@ if (!defined('MALAWI_BISHOPS_VERSION')) {
  * @param mixed $message Message to log
  * @param string $type Log type
  */
+function malawi_bishops_enqueue_enhancements() {
+    wp_enqueue_style(
+        'malawi-bishops-enhancements',
+        get_template_directory_uri() . '/assets/css/mccb-enhancements.css',
+        array(), 
+        '1.0.0',
+        'all'
+    );
+}
+add_action('wp_enqueue_scripts', 'malawi_bishops_enqueue_enhancements', 999);
 if (!function_exists('malawi_bishops_debug_log')) {
     function malawi_bishops_debug_log($message, $type = 'notice') {
         if (defined('WP_DEBUG') && WP_DEBUG === true) {

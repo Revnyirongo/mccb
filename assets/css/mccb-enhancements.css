@@ -1,0 +1,364 @@
+/**
+ * Malawi Bishops Theme Enhancements
+ * Version: 1.0.0
+ * 
+ * This CSS file contains enhancements to fix mobile rendering issues,
+ * improve hero slider visibility, and create a better layout for the bishops grid.
+ * 
+ * Enhancements include:
+ * - Removing the ticker and corner peel elements
+ * - Improving hero image visibility
+ * - Creating a responsive bishops grid layout
+ * - Enhancing the About MCCB section
+ */
+
+/*********************
+ * GENERAL FIXES
+ *********************/
+
+/* Remove ticker for better mobile experience */
+.news-ticker-container,
+.ticker-wrapper,
+.ticker-item,
+.scrolling-text-container,
+.scrolling-text-wrapper,
+.scrolling-text-item {
+    display: none !important;
+}
+
+/* Remove corner peel element */
+.corner-peel {
+    display: none !important;
+}
+
+/* Scroll Progress Tracker (keeps this functionality) */
+.scroll-progress-tracker {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: transparent !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+.progress-indicator {
+    height: 100% !important;
+    width: 0 !important;
+    background-color: var(--accent-color) !important;
+    transition: width 0.1s ease !important;
+}
+
+/*********************
+ * HERO SLIDER IMPROVEMENTS
+ *********************/
+
+/* Improve hero slider visibility by reducing overlay opacity */
+.hero-slide::before {
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.4) 0%, rgba(75, 0, 130, 0.3) 100%) !important;
+}
+
+/* Improve hero title visibility */
+.hero-title {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    font-weight: 700 !important;
+    font-size: 4rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.2 !important;
+    color: white !important;
+}
+
+.hero-text {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+    font-weight: 500 !important;
+    font-size: 1.3rem !important;
+    max-width: 800px !important;
+    margin: 0 auto 2.5rem !important;
+    line-height: 1.6 !important;
+}
+
+.hero-btn {
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    border: none !important;
+    border-radius: 5px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+    background-color: #e0bf4a !important;
+}
+
+/*********************
+ * BISHOPS GRID STYLING
+ *********************/
+
+.bishops-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 20px !important;
+    margin: 30px 0 !important;
+}
+
+.bishop-card {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    background-color: white !important;
+    height: 100% !important;
+}
+
+.bishop-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.bishop-img {
+    position: relative !important;
+    height: 0 !important;
+    padding-bottom: 100% !important; /* Make it square for consistency */
+    overflow: hidden !important;
+}
+
+.bishop-img img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important; /* Center on face */
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* Make the Diocese tag more visible */
+.bishop-diocese {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-color: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    font-size: 0.7rem !important;
+    font-weight: bold !important;
+    padding: 5px 10px !important;
+    border-radius: 20px !important;
+    z-index: 2 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.bishop-content {
+    padding: 1.2rem !important;
+    background-color: white !important;
+}
+
+.bishop-name {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: bold !important;
+    color: var(--primary-color) !important;
+}
+
+.bishop-role {
+    color: #555 !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Enhanced Bishops Grid Section */
+.bishops-grid-section {
+    padding: 60px 0 !important;
+    background-color: #f8f9fa !important;
+}
+
+.section-title {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    color: var(--primary-color) !important;
+    position: relative !important;
+    font-size: 2.2rem !important;
+}
+
+.section-title:after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 3px !important;
+    background-color: var(--accent-color) !important;
+}
+
+/*********************
+ * ABOUT MCCB SECTION
+ *********************/
+
+.about-mccb-section {
+    padding: 60px 0 !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+.about-title {
+    margin-bottom: 30px !important;
+    font-size: 2.2rem !important;
+    color: white !important;
+    position: relative !important;
+}
+
+.about-title:after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 3px !important;
+    background-color: var(--accent-color) !important;
+}
+
+.about-content {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+}
+
+.diocese-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 30px !important;
+}
+
+.diocese-tag {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    padding: 8px 15px !important;
+    border-radius: 20px !important;
+    font-size: 0.9rem !important;
+}
+
+.about-more {
+    margin-top: 20px !important;
+    text-align: center !important;
+}
+
+/*********************
+ * RESPONSIVE STYLING
+ *********************/
+
+/* Improved header styles for mobile */
+@media (max-width: 768px) {
+    .site-header {
+        position: relative !important;
+    }
+    
+    .top-bar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+    }
+    
+    /* Simplified top bar for mobile */
+    .contact-info, .social-icons {
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Adjust header for mobile */
+    .site-branding {
+        text-align: center !important;
+        padding: 10px !important;
+    }
+    
+    .custom-logo {
+        max-height: 60px !important;
+        width: auto !important;
+    }
+    
+    /* Hero slider on mobile */
+    .hero-slider {
+        height: 60vh !important;
+        min-height: 400px !important;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-text {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Bishops grid on mobile */
+    .bishops-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* About section on mobile */
+    .about-mccb-section {
+        padding: 40px 15px !important;
+    }
+    
+    .about-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .about-content {
+        font-size: 1rem !important;
+    }
+}
+
+/* Tablet screen size adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bishops-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .hero-title {
+        font-size: 3rem !important;
+    }
+}
+
+/* Small screens - stacked and centered */
+@media (max-width: 480px) {
+    .bishops-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        max-width: 280px !important;
+        margin: 20px auto !important;
+    }
+    
+    .hero-slider {
+        height: 50vh !important;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .diocese-tags {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+}
