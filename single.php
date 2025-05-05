@@ -10,27 +10,28 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-		<div class="container">
-			<?php
-			while (have_posts()) :
-				the_post();
+<main id="primary" class="site-main">
+    <div class="container max-w-4xl mx-auto px-4 py-8">
+        <?php
+        while (have_posts()) :
+            the_post();
 
-				$post_type = get_post_type();
-				
-				if ('bishop' === $post_type) {
-					get_template_part('template-parts/content', 'bishop');
-				} elseif ('event' === $post_type) {
-					get_template_part('template-parts/content', 'event');
-				} else {
-					// For standard posts, use the enhanced single post layout
-					malawi_bishops_enhanced_single_post();
-				}
+            $post_type = get_post_type();
+            
+            // Check if it's a custom post type
+            if ('bishop' === $post_type) {
+                get_template_part('template-parts/content', 'bishop');
+            } elseif ('event' === $post_type) {
+                get_template_part('template-parts/content', 'event');
+            } else {
+                // For standard posts
+                get_template_part('template-parts/content', 'single');
+            }
 
-			endwhile; // End of the loop.
-			?>
-		</div>
-	</main><!-- #main -->
+        endwhile;
+        ?>
+    </div>
+</main>
 
 <?php
 get_footer();
