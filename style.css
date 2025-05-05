@@ -2522,3 +2522,39 @@ div.aligncenter {
         margin: 0 4px;
     }
 }
+/* Clean base styles for singles */
+.prose {
+    max-width: 100%;
+}
+
+.prose img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure content is readable */
+.entry-content {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #374151;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3 {
+    color: #4b0082;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.entry-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Override any conflicting styles */
+.single-post-content,
+.enhanced-single-post {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
