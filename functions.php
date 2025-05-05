@@ -236,6 +236,13 @@ if (!function_exists('malawi_bishops_scripts')) {
         // Enqueue main stylesheet
         wp_enqueue_style('malawi-bishops-style', get_stylesheet_uri(), array(), MALAWI_BISHOPS_VERSION);
         
+        wp_enqueue_style(
+        'tailwindcss',
+        'https://cdn.tailwindcss.com',
+        array(),
+        '3.3.0'
+         );
+        
         // Dynamically enqueue module stylesheets
         $css_modules = [
             'hero-slider',
